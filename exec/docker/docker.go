@@ -36,7 +36,7 @@ func (d *Dcontainer) Run(name, image string, cmd []string, mem int64, logFileNam
 	//Create a Dummy contexts and a Client handler for this connection
 	d.Ctx = context.Background()
 	defaultHeaders := map[string]string{"User-Agent": "engine-api-cli-1.0"}
-	cli, err := client.NewClient("unix:///var/run/docker.sock", "v1.22", nil, defaultHeaders)
+	cli, err := client.NewClient("unix:///var/run/docker.sock", "v1.19", nil, defaultHeaders)
 	if err != nil {
 		d.Close(false)
 		return err
